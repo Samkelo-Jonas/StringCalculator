@@ -17,6 +17,7 @@ public class StringCalculatorKataOne
         }else if (numbers.Contains(","))
         {
             var splitNumbers = numbers.Split(',');
+            
             foreach (var number in splitNumbers)
             {
                 sum += int.Parse(number);
