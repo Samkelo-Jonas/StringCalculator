@@ -10,20 +10,17 @@ public class StringCalculatorKataOne
             return "0";
         }
 
-        if (numbers.Length == 1)
+        char[] delimiters = { ',', '\n', ';', '/' };
+        var numbersArray = numbers.Split(delimiters);
+       
+        foreach (var number in numbersArray)
         {
-            return numbers;
-
-        }else if (numbers.Contains(","))
-        {
-            var splitNumbers = numbers.Split(',','\n');
-            
-            foreach (var number in splitNumbers)
+            if (!string.IsNullOrEmpty(number))
             {
                 sum += int.Parse(number);
             }
-            return sum.ToString();
         }
+        return sum.ToString();
 
         throw new NotImplementedException("This method is not implemented yet.");
     }
