@@ -5,13 +5,13 @@ public class StringCalculatorKataOne
     public string Add(string numbers)
     {
         var sum = 0;
+        char[] delimiters = { ',', '\n', ';', '/', '|', '[', ']', '*', '%' };
+        var numbersArray = numbers.Split(delimiters);
+
         if (string.IsNullOrEmpty(numbers))
         {
             return "0";
         }
-
-        char[] delimiters = { ',', '\n', ';', '/', '|', '[', ']', '*', '%' };
-        var numbersArray = numbers.Split(delimiters);
         
         foreach (var number in numbersArray)
         {
