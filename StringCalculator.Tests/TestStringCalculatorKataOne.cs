@@ -105,4 +105,19 @@ public class TestStringCalculatorKataOne
         //Assert
         Assert.Equal("Negatives not allowed: -2", exception.Message);
     }
+
+    [Fact]
+    public void Add_GivenNumberGreaterThan1000_ShouldIgnoreIt()
+    {
+        // Arrange
+        var numbers = "2,1001";
+        var expected = "2";
+        var stringCalculator = new StringCalculatorKataOne();
+        
+        // Act
+        var result = stringCalculator.Add(numbers);
+        
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
