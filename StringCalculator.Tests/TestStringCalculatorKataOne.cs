@@ -31,4 +31,19 @@ public class TestStringCalculatorKataOne
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Add_GivenTwoNumbers_ShouldReturnSum()
+    {
+        // Arrange
+        var numbers = "1,2";
+        var expected = "3";
+        var stringCalculator = new StringCalculatorKataOne();
+        
+        // Act
+        var result = stringCalculator.Add(numbers);
+        
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
