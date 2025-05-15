@@ -10,9 +10,9 @@ public class StringCalculatorKataOne
             return "0";
         }
 
-        char[] delimiters = { ',', '\n', ';', '/' };
+        char[] delimiters = { ',', '\n', ';', '/', '|', '[', ']' };
         var numbersArray = numbers.Split(delimiters);
-
+        
         foreach (var number in numbersArray)
         {
             if (!string.IsNullOrEmpty(number))
@@ -25,6 +25,7 @@ public class StringCalculatorKataOne
                 {
                     continue;
                 }
+
                 sum += int.Parse(number);
             }
 
