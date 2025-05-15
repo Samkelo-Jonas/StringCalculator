@@ -16,4 +16,19 @@ public class TestStringCalculatorKataOne
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Add_GivenSingleNumber_ShouldReturnSameNumber()
+    {
+        // Arrange
+        var numbers = "5";
+        var expected = "5";
+        var stringCalculator = new StringCalculatorKataOne();
+       
+        // Act
+        var result = stringCalculator.Add(numbers);
+        
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
