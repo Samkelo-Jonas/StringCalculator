@@ -11,9 +11,9 @@ public class TestStringCalculatorKataOne
         var stringCalculator = new StringCalculatorKataOne();
 
         // Act
-        var restult = stringCalculator.Add(numbers);
+        var result = stringCalculator.Add(numbers);
 
         // Assert
-        Assert.Equal(expected, restult);
+        Assert.Equal(expected, result);
     }
 }
