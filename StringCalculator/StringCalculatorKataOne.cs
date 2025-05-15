@@ -16,7 +16,7 @@ public class StringCalculatorKataOne
 
         }else if (numbers.Contains(","))
         {
-            var splitNumbers = numbers.Split(',');
+            var splitNumbers = numbers.Split(',','\n');
             
             foreach (var number in splitNumbers)
             {
