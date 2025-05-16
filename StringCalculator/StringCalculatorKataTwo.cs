@@ -23,23 +23,24 @@ public class StringCalculatorKataTwo
             numbers = numbers.Substring(4);
         }
 
+
         if (!string.IsNullOrEmpty(numbers))
         {
+
             var numberList = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             foreach (var number in numberList)
             {
+                if (number.Contains("-"))
+                {
+                   throw new ArgumentException($"Negatives not allowed: {number}");
+                }
+
                 if (int.TryParse(number, out int num))
                 {
                     sum += num;
                 }
-                
             }
         }
-
-
-
-
         return sum.ToString();
-
     }
 }
