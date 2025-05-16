@@ -5,26 +5,39 @@ namespace StringCalculator;
 
 public class StringCalculatorKataTwo
 {
-    int sum = 0;
-    char[] delimiters = { ',', '\n' };
     public string Add(string numbers)
     {
+
+        int sum = 0;
+        char[] delimiters = { ',', '\n', '/', '[', ']' };
+        
         if (string.IsNullOrEmpty(numbers))
         {
             return "0";
         }
 
+        if (numbers.StartsWith("//"))
+        {
+            var customDelimiter = numbers[2];
+            delimiters = new[] { customDelimiter, '\n' };
+            numbers = numbers.Substring(4);
+        }
+
         if (!string.IsNullOrEmpty(numbers))
         {
-            var numberArray = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var number in numberArray)
+            var numberList = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var number in numberList)
             {
-                if (int.TryParse(number, out int result))
+                if (int.TryParse(number, out int num))
                 {
-                    sum += result;
+                    sum += num;
                 }
+                
             }
         }
+
+
+
 
         return sum.ToString();
 
