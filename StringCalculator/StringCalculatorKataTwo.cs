@@ -10,12 +10,6 @@ public class StringCalculatorKataTwo
 
         int sum = 0;
         char[] delimiters = { ',', '\n', '/', '[', ']' };
-        
-        if (string.IsNullOrEmpty(numbers))
-        {
-            return "0";
-        }
-
         if (numbers.StartsWith("//"))
         {
             var customDelimiter = numbers[2];
@@ -23,23 +17,27 @@ public class StringCalculatorKataTwo
             numbers = numbers.Substring(4);
         }
 
-
-        if (!string.IsNullOrEmpty(numbers))
+        if (string.IsNullOrEmpty(numbers))
         {
+            return "0";
+        }
+        var numberArray = numbers.Split(delimiters);
 
-            var numberList = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var number in numberList)
+        foreach (var number in numberArray)
+        {
+            if (!string.IsNullOrEmpty(number))
             {
-                if (number.Contains("-"))
+                if (int.Parse(number) < 0)
                 {
-                   throw new ArgumentException($"Negatives not allowed: {number}");
+                    throw new ArgumentException($"Negatives not allowed: {number}");
                 }
-
-                if (int.TryParse(number, out int num))
+                else if (int.Parse(number) > 1000)
                 {
-                    sum += num;
+                    continue;
                 }
+                sum += int.Parse(number);
             }
+
         }
         return sum.ToString();
     }
