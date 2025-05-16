@@ -7,22 +7,22 @@ public class StringCalculatorKataTwo
 {
     public string Add(string numbers)
     {
-
         int sum = 0;
 
         if (string.IsNullOrEmpty(numbers))
         {
             return "0";
         }
-        char[] delimiters = { ',', '\n', '/', '[', ']', '*' };
+
+        char[] delimiters = { ',', '\n', '/', '[', ']', '*', '%', ';' };
+        var numberArray = numbers.Split(delimiters);
+        
         if (numbers.StartsWith("//"))
         {
             var customDelimiter = numbers[2];
-            delimiters = new[] { customDelimiter, '\n', ',', '/', '[', ']', '*' };
+            delimiters = new[] { customDelimiter, '\n', ',', '/', '[', ']', '*', '%', ';' };
             numbers = numbers.Substring(4);
         }
-
-        var numberArray = numbers.Split(delimiters);
 
         foreach (var number in numberArray)
         {
