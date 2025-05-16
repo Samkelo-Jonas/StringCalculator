@@ -9,18 +9,19 @@ public class StringCalculatorKataTwo
     {
 
         int sum = 0;
-        char[] delimiters = { ',', '\n', '/', '[', ']' };
-        if (numbers.StartsWith("//"))
-        {
-            var customDelimiter = numbers[2];
-            delimiters = new[] { customDelimiter, '\n' };
-            numbers = numbers.Substring(4);
-        }
 
         if (string.IsNullOrEmpty(numbers))
         {
             return "0";
         }
+        char[] delimiters = { ',', '\n', '/', '[', ']', '*' };
+        if (numbers.StartsWith("//"))
+        {
+            var customDelimiter = numbers[2];
+            delimiters = new[] { customDelimiter, '\n', ',', '/', '[', ']', '*' };
+            numbers = numbers.Substring(4);
+        }
+
         var numberArray = numbers.Split(delimiters);
 
         foreach (var number in numberArray)
