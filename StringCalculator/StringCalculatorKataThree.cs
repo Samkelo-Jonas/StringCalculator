@@ -8,7 +8,16 @@ public class StringCalculatorKataThree
         {
             return "0";
         }
-        return "0";
+
+        var sum = 0;
+        char[] delimiters = { ',', '\n' };
+        var numberArray = numbers.Split(delimiters);
+
+        if (!string.IsNullOrEmpty(numbers))
+        {
+            return numbers;
+        }
+        return "numbers";
     }
 }
 
