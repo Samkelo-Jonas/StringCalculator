@@ -48,4 +48,19 @@ public class TestStringCalculatorKataThree
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Add_GivenMultipleNumbers_ShouldReturnSum()
+    {
+        // Arrange
+        var numbers = "3,4,5";
+        var expected = "12";
+        var stringCalculator = new StringCalculatorKataThree();
+        
+        // Act
+        var result = stringCalculator.Add(numbers);
+        
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
