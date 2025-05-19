@@ -11,13 +11,17 @@ public class StringCalculatorKataThree
 
         var sum = 0;
         char[] delimiters = { ',', '\n' };
-        var numberArray = numbers.Split(delimiters);
-
-        if (!string.IsNullOrEmpty(numbers))
+        var numbersArray = numbers.Split(delimiters);
+    
+        foreach (var number in numbersArray)
         {
-            return numbers;
+            if (!string.IsNullOrEmpty(number))
+            {
+                sum += int.Parse(number);
+            }
         }
-        return "numbers";
+        
+        return sum.ToString();
     }
 }
 
