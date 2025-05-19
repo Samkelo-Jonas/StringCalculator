@@ -107,4 +107,34 @@ public class TestStringCalculatorKataThree
         //Assert
         Assert.Equal("Negatives not allowed: -2", exception.Message);
     }
+
+    [Fact]
+    public void Add_GivenNumbersGreaterThan1000_ShouldIgnoreThem()
+    {
+        // Arrange
+        var numbers = "1001,2";
+        var expected = "2";
+        var stringCalculator = new StringCalculatorKataThree();
+
+        // Act
+        var result = stringCalculator.Add(numbers);
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void Add_GivenMultipleDelimiters_ShouldReturnSum()
+    {
+        // Arrange
+        var numbers = "//[***]\n1***2***3";
+        var expected = "6";
+        var stringCalculator = new StringCalculatorKataThree();
+        
+        // Act
+        var result = stringCalculator.Add(numbers);
+        
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
