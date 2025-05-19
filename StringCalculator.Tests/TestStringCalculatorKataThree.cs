@@ -93,4 +93,18 @@ public class TestStringCalculatorKataThree
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Add_GivenNegativeNumbers_ShouldThrowException()
+    {
+        // Arrange
+        var numbers = "4,1,-2";
+        var stringCalculator = new StringCalculatorKataThree();
+        
+        // Act
+        var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
+
+        //Assert
+        Assert.Equal("Negatives not allowed: -2", exception.Message);
+    }
 }

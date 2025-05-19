@@ -17,6 +17,10 @@ public class StringCalculatorKataThree
         {
             if (!string.IsNullOrEmpty(number))
             {
+                if (int.Parse(number) < 0)
+                {
+                    throw new ArgumentException($"Negatives not allowed: {number}");
+                }
                 sum += int.Parse(number);
             }
         }
