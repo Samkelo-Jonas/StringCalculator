@@ -10,7 +10,7 @@ public class StringCalculatorKataThree
         }
 
         var sum = 0;
-        char[] delimiters = { ',', '\n' };
+        char[] delimiters = { ',', '\n', '/', ';' };
         var numbersArray = numbers.Split(delimiters);
     
         foreach (var number in numbersArray)
