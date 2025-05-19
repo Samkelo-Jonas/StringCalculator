@@ -21,6 +21,10 @@ public class StringCalculatorKataThree
                 {
                     throw new ArgumentException($"Negatives not allowed: {number}");
                 }
+                else if (int.Parse(number) > 1000)
+                {
+                    continue;
+                }
                 sum += int.Parse(number);
             }
         }
