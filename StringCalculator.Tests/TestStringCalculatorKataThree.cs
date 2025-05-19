@@ -137,4 +137,20 @@ public class TestStringCalculatorKataThree
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Add_GivenMultipleCustomDelimiters_ShouldReturnSum()
+    {
+        // Arrange
+        var numbers = "//[***][###]\n1***2###3";
+        var expected = "6";
+        var stringCalculator = new StringCalculatorKataThree();
+
+        // Act
+        var result = stringCalculator.Add(numbers);
+
+        // Assert
+        Assert.Equal(expected, result);
+
+    }
 }
