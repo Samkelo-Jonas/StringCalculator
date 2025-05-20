@@ -15,7 +15,7 @@ namespace StringCalculator
                 return "0";
             }
 
-            char[] delimiters = { ',', '\n', '/', ';' };
+            char[] delimiters = { ',', '\n', '/', ';', '[', ']', '*' };
             var numbersArray = numbers.Split(delimiters);
             var negativeNumbers = new List<int>();
 
