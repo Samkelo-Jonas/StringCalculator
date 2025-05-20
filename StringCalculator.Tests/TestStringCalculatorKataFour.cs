@@ -7,7 +7,7 @@ namespace StringCalculator.Tests
     public class TestStringCalculatorKataFour
     {
         [Fact]
-        public void Add_GivenEmptyString_ReturnsZero()
+        public void Add_GivenEmptyString_ShouldReturnsZero()
         {
             // Arrange
             var numbers = "";
@@ -22,7 +22,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenSingleNumber_ReturnsSameNumber()
+        public void Add_GivenSingleNumber_ShouldReturnSameNumber()
         {
             // Arrange
             var numbers = "2";
@@ -37,7 +37,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenTwoNumbers_ReturnsSum()
+        public void Add_GivenTwoNumbers_ShouldReturnSum()
         {
             // Arrange
             var numbers = "1, 2";
@@ -52,7 +52,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenMultipleNumbers_ReturnsSum()
+        public void Add_GivenMultipleNumbers_ShouldReturnSum()
         {
             // Arrange
             var numbers = "1, 2, 3";
@@ -67,7 +67,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenNewLineDelimiter_ReturnsSum()
+        public void Add_GivenNewLineDelimiter_ShouldReturnSum()
         {
             // Arrange
             var numbers = "1\n2,3";
@@ -82,7 +82,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenCustomDelimiter_ReturnsSum()
+        public void Add_GivenCustomDelimiter_ShouldReturnSum()
         {
             // Arrange
             var numbers = "//;\n1;2";
@@ -97,7 +97,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenNegativeNumbers_ThrowsException()
+        public void Add_GivenNegativeNumbers_ShouldThrowException()
         {
             // Arrange
             var numbers = "1,-2,3";
@@ -111,7 +111,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenMultipleNegativeNumbers_ThrowsException()
+        public void Add_GivenMultipleNegativeNumbers_ShouldThrowException()
         {
             // Arrange
             var numbers = "1,-2,-3";
@@ -121,6 +121,21 @@ namespace StringCalculator.Tests
             var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
             // Assert
             Assert.Equal("Negatives not allowed: -2, -3", exception.Message);
+        }
+
+        [Fact]
+        public void Add_GivenNumbersGreaterThan1000_ShouldIgnoreThem()
+        {
+            // Arrange
+            var numbers = "1001,2";
+            var expected = "2";
+            var stringCalculator = new StringCalculatorKataFour();
+            
+            // Act
+            var result = stringCalculator.Add(numbers);
+            
+            // Assert
+            Assert.Equal(expected, result);
         }
     }
 }
