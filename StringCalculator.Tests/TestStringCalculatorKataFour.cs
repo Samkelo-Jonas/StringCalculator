@@ -119,6 +119,7 @@ namespace StringCalculator.Tests
 
             // Act
             var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
+            
             // Assert
             Assert.Equal("Negatives not allowed: -2, -3", exception.Message);
         }
@@ -164,6 +165,21 @@ namespace StringCalculator.Tests
             // Act
             var result = stringCalculator.Add(numbers);
 
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Add_GivenNumbersWithDifferentDelimiters_ShouldReturnSum()
+        {
+            // Arrange
+            var numbers = "//[**][%%]\n1**2%%3";
+            var expected = "6";
+            var stringCalculator = new StringCalculatorKataFour();
+            
+            // Act
+            var result = stringCalculator.Add(numbers);
+            
             // Assert
             Assert.Equal(expected, result);
         }
