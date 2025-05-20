@@ -21,5 +21,19 @@ namespace StringCalculator.Tests
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void Add_GivenSingleNumber_ReturnsSameNumber()
+        {
+            // Arrange
+            var numbers = "2";
+            var expected = "2";
+            var stringCalculator = new StringCalculatorKataFour();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -13,6 +13,11 @@ namespace StringCalculator
                 return "0";
             }
 
+            if (!string.IsNullOrEmpty(numbers))
+            {
+                return numbers;
+            }
+
             return sum.ToString();
         }
     }
