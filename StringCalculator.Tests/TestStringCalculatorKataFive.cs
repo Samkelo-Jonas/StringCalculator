@@ -138,5 +138,20 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenDelimiters_ShouldReturnSum()
+        {
+            // Arrange
+            var numbers = "//[***]\n***1***2***3";
+            var expected = "6";
+            var stringCalculator = new StringCalculatorKataFive(); 
+            
+            // Act
+            var result = stringCalculator.Add(numbers); 
+            
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
