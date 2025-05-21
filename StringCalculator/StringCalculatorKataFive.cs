@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,15 @@ namespace StringCalculator
             {
                 return "0";
             }
-            return "0";
+            
+            var sum = 0;
+
+            if (!string.IsNullOrEmpty(numbers))
+            {
+                sum += int.Parse(numbers);
+            }
+
+            return sum.ToString();
         }
     }
 }
