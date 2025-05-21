@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StringCalculator
 {
@@ -17,7 +13,7 @@ namespace StringCalculator
             }
             
             var sum = 0;
-            char[] delimiters = { ',', '\n', '/', ';', '[', ']', '*' };
+            char[] delimiters = { ',', '\n', '/', ';', '[', ']', '*', '%' };
             var numbersArray = numbers.Split(delimiters);
             var negativeNumbers = new List<int>();
 
