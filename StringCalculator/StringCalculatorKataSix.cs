@@ -17,6 +17,11 @@ namespace StringCalculator
                 return "0";
             }
 
+            if (!string.IsNullOrEmpty(numbers))
+            {
+                sum += int.Parse(numbers);
+            }
+
             return sum.ToString();
 
         }
