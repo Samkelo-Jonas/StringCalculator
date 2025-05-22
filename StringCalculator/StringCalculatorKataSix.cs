@@ -11,7 +11,7 @@ namespace StringCalculator
         public string Add(string numbers)
         {
             var sum = 0;
-            char[] delimiters = { ',', '\n', '[', ']', '/', ';', '!' };
+            char[] delimiters = { ',', '\n', '[', ']', '/', ';', '!', '|' };
             var numbersArray = numbers.Split(delimiters);
             var negativeNumbers = new List<string>();
 
@@ -36,7 +36,6 @@ namespace StringCalculator
                 throw new ArgumentException($"Negatives not allowed: {string.Join("," , negativeNumbers)}");
             }
             return sum.ToString();
-
         }
     }
 }
