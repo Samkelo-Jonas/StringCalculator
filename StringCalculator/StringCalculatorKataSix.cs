@@ -11,7 +11,7 @@ namespace StringCalculator
         public string Add(string numbers)
         {
             var sum = 0;
-            char[] delimiters = { ',', '\n' };
+            char[] delimiters = { ',', '\n', '[', ']', '/', ';' };
             var numbersArray = numbers.Split(delimiters);
 
             if (string.IsNullOrEmpty(numbers))
