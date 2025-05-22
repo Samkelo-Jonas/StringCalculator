@@ -123,5 +123,20 @@ namespace StringCalculator.Tests
             //Assert
             Assert.Equal("Negatives not allowed: -1, -3", exception.Message);
         }
+
+        [Fact]
+        public void Add_GivenAnyLengthCustomDelimiter_ShouldReturnSum()
+        {
+            // Arrange
+            var numbers = "//[!!!]\n1!!!2!!!3";
+            var expected = "6";
+            var stringCalculator = new StringCalculatorKataSix();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
