@@ -10,6 +10,7 @@ namespace StringCalculator
             var sum = 0;
             char[] delimiters = { ',', '\n', ';', '/' };
             var numbersArray = numbers.Split(delimiters);
+            var negativeNumbers = new List<int>();
 
             if (string.IsNullOrEmpty(numbers))
             {
@@ -20,8 +21,16 @@ namespace StringCalculator
             {
                 if (!string.IsNullOrEmpty(number))
                 {
+                    if (int.Parse(number) < 0)
+                    {
+                        negativeNumbers.Add(int.Parse(number));
+                    }
                     sum += int.Parse(number);
                 }
+            }
+            if (negativeNumbers.Any())
+            {
+                throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
             return sum.ToString();
         }
