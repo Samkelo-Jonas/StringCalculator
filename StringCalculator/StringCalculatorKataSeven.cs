@@ -8,7 +8,7 @@ namespace StringCalculator
         public string Add(string numbers)
         {
             var sum = 0;
-            char[] delimiters = { ',', '\n' };
+            char[] delimiters = { ',', '\n', ';', '/' };
             var numbersArray = numbers.Split(delimiters);
 
             if (string.IsNullOrEmpty(numbers))
@@ -18,7 +18,7 @@ namespace StringCalculator
 
             foreach (var number in numbersArray)
             {
-                if (!string.IsNullOrEmpty(numbers))
+                if (!string.IsNullOrEmpty(number))
                 {
                     sum += int.Parse(number);
                 }
