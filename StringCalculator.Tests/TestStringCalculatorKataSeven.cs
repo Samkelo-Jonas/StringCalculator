@@ -19,7 +19,21 @@ namespace StringCalculator.Tests
 
             // Assert
             Assert.Equal(expected, result);
+        }
 
+        [Fact]
+        public void Add_GivenSingleNumber_ShouldReturnNumber()
+        {
+            // Arrange
+            var numbers = "6";
+            var expected = "6";
+            var stringCalculator = new StringCalculatorKataSeven();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+            
+            //Assert
+            Assert.Equal(expected, result);
         }
     }
 }
