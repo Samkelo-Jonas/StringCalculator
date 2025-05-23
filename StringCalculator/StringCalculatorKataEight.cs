@@ -13,10 +13,15 @@ namespace StringCalculator
             }
 
             var sum = 0;
+            char[] delimiters = {  ',', '\n' };
+            var numbersArray = numbers.Split(delimiters);
 
-            if (!string.IsNullOrEmpty(numbers))
+            foreach (var number in numbersArray)
             {
-                sum += int.Parse(numbers);
+                if (!string.IsNullOrEmpty(number))
+                {
+                    sum += int.Parse(number);
+                }
             }
             return sum.ToString();
         }
