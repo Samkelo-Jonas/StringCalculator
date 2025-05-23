@@ -14,7 +14,22 @@ namespace StringCalculator.Tests
             // Arrange
             var numbers = "";
             var expected = "0";
-            var stringCalculator = new TestStringCalculatorKataNine();
+            var stringCalculator = new StringCalculatorKataNine();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Add_GivenOneNumber_ShouldReturnTheNumber()
+        {
+            // Arrange
+            var numbers = "1";
+            var expected = "1";
+            var stringCalculator = new StringCalculatorKataNine();
 
             // Act
             var result = stringCalculator.Add(numbers);
