@@ -15,13 +15,24 @@ namespace StringCalculator
             var sum = 0;
             char[] delimiters = {  ',', '\n', ';', '/' };
             var numbersArray = numbers.Split(delimiters);
+            var negativeNumbers = new List<int>();
 
             foreach (var number in numbersArray)
             {
                 if (!string.IsNullOrEmpty(number))
                 {
+                    var value = int.Parse(number);
+                    if (value < 0)
+                    {
+                        negativeNumbers.Add(value);
+                    }
                     sum += int.Parse(number);
                 }
+            }
+
+            if (negativeNumbers.Any())
+            {
+                throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
             return sum.ToString();
         }
