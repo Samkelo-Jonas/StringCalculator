@@ -82,5 +82,20 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenOneDelimiter_ShouldReturnSum()
+        {
+            // Arrange
+            var numbers = "//;\n1; 2";
+            var expected = "3";
+            var stringCalculator = new StringCalculatorKataNine();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
