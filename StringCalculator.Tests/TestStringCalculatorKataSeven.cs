@@ -123,5 +123,20 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal("Negatives not allowed: -1, -2", exception.Message);
         }
+
+        [Fact]
+        public void Add_GivenNumbersGreaterThan1000_ShouldBeIgnored()
+        {
+            // Arrange
+            var numbers = "1001, 2, 3";
+            var expected = "5";
+            var stringCalculator = new StringCalculatorKataSeven();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
