@@ -26,7 +26,11 @@ namespace StringCalculator
                     {
                         negativeNumbers.Add(value);
                     }
-                    sum += int.Parse(number);
+                    else if (value > 1000)
+                    {
+                        continue;
+                    }
+                        sum += int.Parse(number);
                 }
             }
 
