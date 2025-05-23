@@ -8,15 +8,20 @@ namespace StringCalculator
         public string Add(string numbers)
         {
             var sum = 0;
+            char[] delimiters = { ',', '\n' };
+            var numbersArray = numbers.Split(delimiters);
 
             if (string.IsNullOrEmpty(numbers))
             {
                 return "0";
             }
 
-            if (!string.IsNullOrEmpty(numbers))
+            foreach (var number in numbersArray)
             {
-                return numbers;
+                if (!string.IsNullOrEmpty(numbers))
+                {
+                    sum += int.Parse(number);
+                }
             }
             return sum.ToString();
         }
