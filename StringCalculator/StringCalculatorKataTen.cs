@@ -31,7 +31,7 @@ namespace StringCalculator
             }
             if (negativeNumbers.Any())
             {
-                throw new ArgumentException($"Negatives not allowed: {string.Join(",", negativeNumbers)}");
+                throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
             return sum.ToString();
         }
