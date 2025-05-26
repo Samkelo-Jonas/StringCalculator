@@ -18,7 +18,11 @@ namespace StringCalculator
 
             foreach (var number in numbersArray)
             {
-                return number;
+                if (!string.IsNullOrEmpty(number))
+                {
+                    var value = int.Parse(number);
+                    sum += value;
+                }
             }
             return sum.ToString();
         }
