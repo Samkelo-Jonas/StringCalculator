@@ -64,5 +64,35 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenNewLine_ShouldReturnTheSum()
+        {
+            // Arrange
+            var numbers = "1\n2, 3";
+            var expected = "6";
+            var stringCalculator = new StringCalculatorKataTen();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Add_GivenOneCustomDelimiter_ShouldReturnTheSum()
+        {
+            // Arrange
+            var numbers = "//;\n1; 2";
+            var expected = "3";
+            var stringCalculator = new StringCalculatorKataTen();
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
