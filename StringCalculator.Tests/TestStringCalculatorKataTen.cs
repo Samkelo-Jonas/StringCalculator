@@ -94,5 +94,19 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenNegativeNumber_ThrowException()
+        {
+            // Arrange
+            var numbers = "-1, 2";
+            var stringCalculator = new StringCalculatorKataTen();
+
+            // Act
+            var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
+
+            //Assert
+            Assert.Equal("Negatives not allowed: -1", exception.Message);
+        }
     }
 }
