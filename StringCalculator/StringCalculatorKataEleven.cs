@@ -11,7 +11,19 @@ namespace StringCalculator
             {
                 return "0";
             }
-            return numbers;
+
+            var sum = 0;
+            char[] delimiters = { ',' };
+            var numbersArray = numbers.Split(delimiters);
+
+            foreach (var number in numbersArray)
+            {
+                if (!string.IsNullOrEmpty(number))
+                {
+                    sum += int.Parse(number);
+                }
+            }
+            return sum.ToString();
         }
     }
 }
