@@ -96,7 +96,7 @@ namespace StringCalculator.Tests
         }
 
         [Fact]
-        public void Add_GivenOneNegativeNumber_ShouldThrowExcption()
+        public void Add_GivenOneNegativeNumber_ShouldThrowException()
         {
             // Arrange
             var numbers = "-1, 2";
@@ -107,6 +107,20 @@ namespace StringCalculator.Tests
 
             // Assert
             Assert.Equal("Negatives not allowed: -1", exception.Message);
+        }
+
+        [Fact]
+        public void Add_GivenOMultipleNegativeNumbers_ShouldThrowException()
+        {
+            // Arrange
+            var numbers = "-1, -2, 3";
+            var stringCalculator = new StringCalculatorKataEleven();
+
+            // Act
+            var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
+
+            // Assert
+            Assert.Equal("Negatives not allowed: -1, -2", exception.Message);
         }
     }
 }
