@@ -53,6 +53,20 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenMultipleNumbers_ShouldReturnTheirSum()
+        {
+            // Arrange
+            var numbers = "1, 2, 1, 4";
+            var expected = "8";
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
         public void Dispose()
         {
         }
