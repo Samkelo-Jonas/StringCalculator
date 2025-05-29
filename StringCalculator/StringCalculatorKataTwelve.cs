@@ -15,7 +15,7 @@ namespace StringCalculator
                 return "0";
             }
             
-            var delimiters = new[] { ',', '\n', '/', ';', '[',']', '|' };
+            var delimiters = new[] { ',', '\n', '/', ';', '[',']', '|', '*' };
             var values = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
                                  .Select(int.Parse)
                                  .ToList();
@@ -27,7 +27,7 @@ namespace StringCalculator
                 throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
 
-            return values.Where(value=>value<1000).Sum().ToString();
+            return values.Where(value => value < 1000).Sum().ToString();
         }
     }
 }
