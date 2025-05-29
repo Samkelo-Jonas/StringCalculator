@@ -19,7 +19,12 @@ namespace StringCalculator
             var values = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
                                 .Select(int.Parse)
                                 .ToList();
-
+            var negatives = values.Where(value => value < 0).ToList();
+            
+            if (negatives.Any())
+            {
+                throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negatives)}");
+            }
             return values.Sum().ToString();
         }
     }
