@@ -20,8 +20,13 @@ namespace StringCalculator
                                  .Select(int.Parse)
                                  .ToList();
 
-         
+            var negativeNumbers = values.Where(value => value < 0).ToList();
             
+            if (negativeNumbers.Any())
+            {
+                throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
+            }
+
             return values.Sum().ToString();
         }
     }
