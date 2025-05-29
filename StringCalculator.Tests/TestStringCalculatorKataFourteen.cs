@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StringCalculator.Tests
 {
@@ -20,6 +18,20 @@ namespace StringCalculator.Tests
             // Arrange
             var numbers = "";
             var expected = "0";
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Add_GivenOneNumber_ShouldReturnThatNumber()
+        {
+            // Arrange
+            var numbers = "1";
+            var expected = "1";
 
             // Act
             var result = stringCalculator.Add(numbers);
