@@ -15,6 +15,13 @@ namespace StringCalculator
                 return "0";
             }
             var sum = 0;
+            var delimiters = new[] { ',' };
+
+            if (!string.IsNullOrEmpty(numbers))
+            {
+                sum += int.Parse(numbers);
+            }
+            
             return sum.ToString();
         }
     }
