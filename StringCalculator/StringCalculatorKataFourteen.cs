@@ -24,7 +24,7 @@ namespace StringCalculator
                 throw new ArgumentException($"Negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
             
-            return values.Sum().ToString();
+            return values.Where(i=> i < 1000).Sum().ToString();
         }
     }
 }
