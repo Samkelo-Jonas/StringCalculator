@@ -15,7 +15,7 @@ namespace StringCalculator
                 return "0";
             }
             
-            var delimiters = new[] { ',', '\n', '/', ';' };
+            var delimiters = new[] { ',', '\n', '/', ';', '[',']', '|' };
             var values = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
                                  .Select(int.Parse)
                                  .ToList();
