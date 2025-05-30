@@ -12,7 +12,11 @@ namespace StringCalculator
             {
                 return "0";
             }
-            return numbers;
+            var delimiters = new[] { ',' };
+            var values = numbers.Split(delimiters, StringSplitOptions.None)
+                                .Select(int.Parse)
+                                .ToList();
+            return values.Sum().ToString();
         }
     }
 }
