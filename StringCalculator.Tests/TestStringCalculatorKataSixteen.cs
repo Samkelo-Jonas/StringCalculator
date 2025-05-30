@@ -69,5 +69,19 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Add_GivenNewLineDelimiter_ShouldReturnTheSum()
+        {
+            // Arrange
+            var numbers = "1\n2, 3";
+            var expected = "6";
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
