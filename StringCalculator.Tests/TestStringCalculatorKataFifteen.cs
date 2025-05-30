@@ -108,6 +108,19 @@ namespace StringCalculator.Tests
             // Assert
             Assert.Equal("Negatives not allowed: -1", exception.Message);
         }
+
+        [Fact]
+        public void Add_GivenMultipleNegativeNumber_ShouldThrowException()
+        {
+            // Arrange
+            var numbers = "2, -4, 3, -5";
+
+            // Act
+            var exception = Assert.Throws<ArgumentException>(() => stringCalculator.Add(numbers));
+
+            // Assert
+            Assert.Equal("Negatives not allowed: -4, -5", exception.Message);
+        }
         public void Dispose()
         {
 
