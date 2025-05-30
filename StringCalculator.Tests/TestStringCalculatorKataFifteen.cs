@@ -26,6 +26,20 @@ namespace StringCalculator.Tests
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void Add_GivenOneNumber_ShouldThatNumber()
+        {
+            // Arrange
+            var numbers = "12";
+            var expected = "12";
+
+            // Act
+            var result = stringCalculator.Add(numbers);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
         public void Dispose()
         {
 
